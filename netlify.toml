@@ -1,0 +1,26 @@
+[build]
+  publish = "src"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[context.production.environment]
+  DEPLOY_ENV = "production"
+
+[context.deploy-preview.environment]
+  DEPLOY_ENV = "preview"
+
+# Redirects
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
