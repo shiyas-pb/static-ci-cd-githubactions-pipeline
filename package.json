@@ -1,0 +1,16 @@
+{
+  "name": "static-website-pipeline",
+  "version": "1.0.0",
+  "description": "Static website with CI/CD pipeline",
+  "scripts": {
+    "test:html": "node tests/html-test.js",
+    "test:screenshot": "node tests/screenshot-test.js",
+    "test": "npm run test:html",
+    "build": "echo 'Build step would optimize assets here'",
+    "lint:html": "htmlhint src/**/*.html"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "puppeteer": "^21.0.0"
+  }
+}
