@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Demo Site</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">DevOps<span>Demo</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to DevOps Pipeline Demo</h1>
+                <p class="subtitle">A complete CI/CD pipeline for static website deployment</p>
+                <div class="cta-buttons">
+                    <a href="#features" class="btn btn-primary">View Features</a>
+                    <a href="https://github.com/yourusername/static-website-pipeline" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Pipeline Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>HTML Validation</h3>
+                        <p>Automated HTML5 validation on every commit</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <h3>Auto Deployment</h3>
+                        <p>Automatic deployment to S3/Netlify on push to main</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-undo"></i>
+                        </div>
+                        <h3>Rollback Support</h3>
+                        <p>Easy rollback to previous versions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Performance Testing</h3>
+                        <p>Lighthouse performance audits</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pipeline-info">
+            <div class="container">
+                <h2>CI/CD Pipeline Flow</h2>
+                <div class="pipeline-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <h4>Code Commit</h4>
+                        <p>Push changes to GitHub repository</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <h4>Automated Tests</h4>
+                        <p>HTML validation & Lighthouse tests</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <h4>Build & Deploy</h4>
+                        <p>Deploy to staging/production</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <h4>Monitor</h4>
+                        <p>Performance monitoring & alerts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Built with ❤️ using GitHub Actions | Last Deployed: <span id="deploy-date">Loading...</span></p>
+            <p class="build-info">Build: <span id="build-id">#${GITHUB_RUN_NUMBER}</span> | Commit: <span id="commit-sha">${GITHUB_SHA}</span></p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
