@@ -1,0 +1,34 @@
+name: Test Website
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔍 Lint HTML files
+        run: npm run lint:html
+
+      - name: 🧪 Run custom tests
+        run: npm test
+
+      - name: 📊 Generate test report
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: HTML Test Results
+          path: '*.xml'
+          reporter: 'java-junit'
