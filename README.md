@@ -30,7 +30,7 @@ GitHub Repository
 ├── AWS S3 + CloudFront
 └── Netlify (Alternative)
 ```
-### Prerequisites
+## Prerequisites
 
 - Node.js 18+
 - AWS Account (for S3 deployment)
